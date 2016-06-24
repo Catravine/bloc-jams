@@ -31,7 +31,7 @@ body {
 }
 
 /* Medium and small screens (640px) */
-@media (min-width: 640) {
+@media (min-width: 640px) {
   html { font-size: 112%; }
 
   .column {
