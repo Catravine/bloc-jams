@@ -1,3 +1,4 @@
+
 var pointsArray = document.getElementsByClassName('point');
 
 var animatePoints = function(points) {
@@ -9,9 +10,7 @@ var animatePoints = function(points) {
     points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
   };
 
-  for(var i = 0; i < points.length; i++) {
-    revealPoint(i);
-  }
+  forEach(pointsArray, revealPoint);
 };
 
 window.onload = function() {
