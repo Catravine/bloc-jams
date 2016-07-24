@@ -30,6 +30,23 @@ var albumMarconi = {
   ]
 };
 
+// Third, very special album
+var albumSpecial = {
+  title: 'Swearing Behind the Wheel',
+  artist: 'The Bastard Kazoos',
+  label: '7k4 Carolave Records',
+  year: '2016',
+  albumArtUrl: 'assets/images/album_covers/02.png',
+  songs: [
+    { title: 'Gimmie all your cans', duration: '2:33' },
+    { title: 'There is always time for a song', duration: '5:03' },
+    { title: 'Mac Attak', duration: '2:14' },
+    { title: 'Litterbox blues', duration: '4:12' },
+    { title: 'Happy Meal on Layaway', duration: '1:23' },
+    { title: 'Foo Dhousand Blixteen', duration: '20:16' }
+  ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
       '<tr class="album-view-song-item">'
@@ -60,6 +77,22 @@ var setCurrentAlbum = function(album) {
   };
 };
 
+var getCurrentAlbum = function() {
+  return document.getElementsByClassName('album-view-artist')[0].textContent;
+};
+
 window.onload = function() {
-  setCurrentAlbum(albumMarconi);
+  setCurrentAlbum(albumSpecial);
+
+  // first img is the logo, 2nd is the album cover.
+  document.getElementsByTagName('img')[1].addEventListener('click', function() {
+    // Cycle between 3 different albums
+    if (getCurrentAlbum() === "The Bastard Kazoos") {
+      setCurrentAlbum(albumPicasso);
+    } else if (getCurrentAlbum() === "Pablo Picasso") {
+      setCurrentAlbum(albumMarconi);
+    } else {
+      setCurrentAlbum(albumSpecial);
+    };
+  });
 };
