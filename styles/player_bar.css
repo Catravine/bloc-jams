@@ -146,6 +146,11 @@
   vertical-align: middle;
 }
 
+.current-time {
+  text-align: left;
+  margin-top: 2px;
+}
+
 @media (max-width: 640px) {
 
   .player-bar {
